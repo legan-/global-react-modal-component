@@ -3,12 +3,16 @@ import * as TYPES from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 
 Content.propTypes = {
-  children: TYPES.node.isRequired
+  children: TYPES.node.isRequired,
+  biggerFontSize: TYPES.bool.isRequired,
 };
 
-function Content({ children }) {
+function Content({
+  children,
+  biggerFontSize,
+}) {
   return (
-    <div className='content'>
+    <div className={ `content${ biggerFontSize ? ' bigger-font-size' : '' }` }>
       <Grid
         container
         spacing={ 2 }

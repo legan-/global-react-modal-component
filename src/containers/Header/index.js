@@ -11,22 +11,19 @@ import {
 } from './components';
 
 import {
-  showLogInModal,
-  showLogOutModal,
+  showModal,
 } from '~/src/actions';
 
 Header.propTypes = {
   location: TYPES.object.isRequired,
   loggedIn: TYPES.bool.isRequired,
-  showLogInModal: TYPES.func.isRequired,
-  showLogOutModal: TYPES.func.isRequired,
+  showModal: TYPES.func.isRequired,
 };
 
 function Header({
   location,
   loggedIn,
-  showLogInModal,
-  showLogOutModal,
+  showModal,
 }) {
 
   return (
@@ -47,7 +44,7 @@ function Header({
       </Nav>
       <Nav>
         <NavButton
-          onClick={ loggedIn ? showLogOutModal : showLogInModal }
+          onClick={ loggedIn ? () => showModal('logOut') : () => showModal('logIn') }
         >
           { loggedIn ? 'Log Out' : 'Log In' }
         </NavButton>
@@ -62,8 +59,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
-    showLogInModal,
-    showLogOutModal,
+    showModal,
   }, dispatch),
 });
 

@@ -11,15 +11,15 @@ import {
 } from './components';
 
 import {
-  showChangeBackgroundColorModal
+  showModal
 } from '~/src/actions';
 
 Main.propTypes = {
-  showChangeBackgroundColorModal: TYPES.func.isRequired,
+  showModal: TYPES.func.isRequired,
 };
 
 function Main({
-  showChangeBackgroundColorModal
+  showModal
 }) {
   return (
     <Wrapper>
@@ -33,7 +33,7 @@ function Main({
         <Button
           color='primary'
           variant='contained'
-          onClick={ showChangeBackgroundColorModal }
+          onClick={ () => showModal('changeBackgroundColor') }
         >
           Change Background Color
         </Button>
@@ -42,17 +42,13 @@ function Main({
   );
 }
 
-const mapStateToProps = () => ({
-
-});
-
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
-    showChangeBackgroundColorModal
+    showModal
   }, dispatch),
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Main);

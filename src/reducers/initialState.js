@@ -1,6 +1,8 @@
 export default {
   modal: {
-    isActive: false,
+    action: '',
+    title: '',
+    message: '',
   },
   loggedIn: false,
   darkerBackgroundColor: false,

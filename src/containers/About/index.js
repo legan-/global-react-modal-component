@@ -12,15 +12,17 @@ import {
 } from './components';
 
 import {
-  showChangeFontSizeModal
+  showModal
 } from '~/src/actions';
 
 About.propTypes = {
-  showChangeFontSizeModal: TYPES.func.isRequired,
+  biggerFontSize: TYPES.bool.isRequired,
+  showModal: TYPES.func.isRequired,
 };
 
 function About({
-  showChangeFontSizeModal,
+  biggerFontSize,
+  showModal,
 }) {
   return (
     <Wrapper>
@@ -31,7 +33,7 @@ function About({
         About
       </Typography>
       <Content
-        textSize=''
+        biggerFontSize={ biggerFontSize }
       >
         <Text>
           We believe technology must be simple, affordable and useful. Our company is built on compassion, by people who understand what it’s like to care for loved ones.
@@ -42,7 +44,7 @@ function About({
         <Button
           color='primary'
           variant='contained'
-          onClick={ showChangeFontSizeModal }
+          onClick={ () => showModal('changeFontSize') }
         >
           Change Font Size
         </Button>
@@ -51,13 +53,13 @@ function About({
   );
 }
 
-const mapStateToProps = () => ({
-
+const mapStateToProps = state => ({
+  biggerFontSize: state.biggerFontSize
 });
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
-    showChangeFontSizeModal
+    showModal
   }, dispatch),
 });
 
