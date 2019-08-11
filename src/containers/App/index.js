@@ -4,13 +4,13 @@ import { hot } from 'react-hot-loader';
 
 import {
   Container,
-  Header,
   Footer,
   Wrapper,
 } from './components';
 
 import {
   About,
+  Header,
   Main,
 } from '../index';
 

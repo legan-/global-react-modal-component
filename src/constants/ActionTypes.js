@@ -1,1 +1,3 @@
-export default {};
+export default {
+  SHOW_MODAL: 'SHOW_MODAL'
+};
