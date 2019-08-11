@@ -1,16 +1,16 @@
 import React from 'react';
 import * as TYPES from 'prop-types';
 
-Wrapper.propTypes = {
+Content.propTypes = {
   children: TYPES.node.isRequired
 };
 
-function Wrapper({ children }) {
+function Content({ children }) {
   return (
-    <div className='container wrapper'>
+    <div className='content'>
       { children }
     </div>
   );
 }
 
-export default Wrapper;
+export default Content;

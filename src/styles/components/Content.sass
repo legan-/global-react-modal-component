@@ -1,10 +1,21 @@
-.content
-  height: 100%
-  margin-bottom: $indent/2
-
+.container
   &.wrapper
     height: 100%
     display: flex
     justify-content: center
     align-items: start
     padding-top: $indent/2
+    margin-bottom: $indent/2
+
+    > *
+      height: 100%
+      width: 100%
+
+      h3
+        text-align: center
+
+      .content
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 100%

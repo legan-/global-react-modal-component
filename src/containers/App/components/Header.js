@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
 import * as TYPES from 'prop-types';
+import Button from '@material-ui/core/Button';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 Header.propTypes = {
   location: TYPES.object.isRequired
@@ -33,6 +34,13 @@ function Header({ location }) {
               About
             </Button>
           </Link>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <Button>
+            <ExitToAppIcon />
+          </Button>
         </li>
       </ul>
     </header>
